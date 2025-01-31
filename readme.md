@@ -1,6 +1,6 @@
 # Blog API with Authentication
 
-A RESTful API for managing blog posts with user authentication. This project is built using **Node.js**, **Express**, **MongoDB**, and **JWT** for authentication.
+A RESTful API for managing blog posts with user authentication. Built using **Node.js**, **Express**, **MongoDB**, and **JWT** for authentication.
 
 ---
 
@@ -9,7 +9,7 @@ A RESTful API for managing blog posts with user authentication. This project is 
 - **User Authentication**: Secure user registration and login using JSON Web Tokens (JWT).
 - **Blog Management**: Create, read, update, and delete blog posts.
 - **Protected Routes**: Only authenticated users can create, update, or delete blog posts.
-- **Pagination**: Supports pagination for fetching blog posts.
+- **Pagination**: Fetch blog posts with pagination support.
 - **Search Functionality**: Search blog posts by title or content.
 
 ---
@@ -19,8 +19,8 @@ A RESTful API for managing blog posts with user authentication. This project is 
 - **Node.js**: JavaScript runtime environment.
 - **Express**: Web framework for Node.js.
 - **MongoDB**: NoSQL database for storing data.
-- **Mongoose**: ODM (Object Data Modeling) library for MongoDB.
-- **JWT**: JSON Web Tokens for user authentication.
+- **Mongoose**: ODM library for MongoDB.
+- **JWT**: JSON Web Tokens for authentication.
 - **Bcrypt**: Library for hashing passwords.
 - **Dotenv**: For managing environment variables.
 
@@ -38,7 +38,7 @@ bash
 Copy
 npm install
 Set up environment variables:
-Create a .env file in the root directory and add the following variables:
+Create a .env file in the root directory and add the following:
 
 env
 Copy
@@ -50,29 +50,31 @@ Run the server:
 bash
 Copy
 npm start
-The server will start running on http://localhost:3000.
+The server will start at http://localhost:3000.
 
 API Endpoints
 Authentication
-POST /api/auth/register: Register a new user.
+POST http://localhost:3000/signup Register a new user.
 
 json
 Copy
 {
-  "username": "user123",
-  "email": "user123@example.com",
-  "password": "password123"
+    "first_name": "jack", 
+    "last_name":"hawkin", 
+    "email":"hawkin@gmail.com", 
+    "pw":"aaa", 
+    "country":"USA"
 }
-POST /api/auth/login: Login an existing user.
+POSThttp://localhost:3000/api/users/login Login an existing user.
 
 json
 Copy
 {
-  "email": "user123@example.com",
-  "password": "password123"
+    "email":"hawkin@gmail.com", 
+    "pw":"aaa"
 }
 Blog Posts
-GET /api/posts: Get all blog posts (supports pagination and search).
+GET http://localhost:3000/api/blog/allblogs Get all blog posts.
 
 Query Parameters:
 
@@ -82,36 +84,57 @@ limit: Number of posts per page (default: 10).
 
 search: Search query for title or content.
 
-GET /api/posts/:id : Get a single blog post by ID.
+GET /api/posts/:id: Get a single blog post by ID.
 
-POST /api/posts: Create a new blog post (requires authentication).
-
-json
-Copy
-{
-  "title": "My First Blog Post",
-  "content": "This is the content of my first blog post."
-}
-PUT /api/posts/:id : Update a blog post by ID (requires authentication).
+POST http://localhost:3000/api/blog/createblog Create a new blog post (requires authentication).
 
 json
 Copy
 {
-  "title": "Updated Blog Post Title",
-  "content": "Updated content of the blog post."
+    "title": "The Future of Space Exploration",
+    "description": "A look at upcoming missions, advancements in space technology, and the possibility of human colonization beyond Earth.",
+    "tag": "space",
+    "author": "Olivia Reynolds",
+    "timestamp": "2025-06-10T10:15:00Z",
+    "state": "draft",
+    "read_count": 150,
+    "reading_time": "7 minutes",
+    "body": "Space exploration is entering a new era with ambitious missions to the Moon, Mars, and beyond. Advancements in rocket technology, AI-driven robotics, and private space ventures are accelerating progress toward interplanetary travel. This article explores the latest developments in space exploration, the challenges of deep-space missions, and the potential for human settlement on other planets."
 }
-DELETE /api/posts/:id : Delete a blog post by ID (requires authentication).
+
+PUT http://localhost:3000/api/blog/singleblog Update a blog post by ID (requires authentication).
+
+json
+Copy
+{
+    "title":"The Impact of Quantum Computing on Cybersecurityssss"
+}
+UPDATE http://localhost:3000/api/blog/updateblog Update a blog post by ID (requires authentication).
+
+json
+COPY
+{
+    "title": "The Future of Space Exploration",
+    "description": "A look at upcoming missions, advancements in space technology, and the possibility of human colonization beyond Earth.",
+    "tag": "space",
+    "author": "Olivia Reynolds",
+    "timestamp": "2025-06-10T10:15:00Z",
+    "state": "draft",
+    "read_count": 150,
+    "reading_time": "7 minutes",
+    "body": "Iamupdating thisnowaa."
+}
 
 Contributing
-Contributions are welcome! If you'd like to contribute, please follow these steps:
+Contributions are welcome! Follow these steps:
 
 Fork the repository.
 
-Create a new branch (git checkout -b feature/YourFeatureName).
+Create a new branch: git checkout -b feature/YourFeatureName.
 
-Commit your changes (git commit -m 'Add some feature').
+Commit your changes: git commit -m 'Add some feature'.
 
-Push to the branch (git push origin feature/YourFeatureName).
+Push to the branch: git push origin feature/YourFeatureName.
 
 Open a pull request.
 
@@ -119,11 +142,10 @@ License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Contact
-If you have any questions or suggestions, feel free to reach out:
+For questions or suggestions, feel free to reach out:
 
 Mahin Rajput
 
 GitHub: Mahin-Rajput
 
-Email: your.email@example.com
-
+Email: mahinvikasrajput@gmail.com
