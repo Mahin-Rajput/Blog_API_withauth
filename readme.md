@@ -32,7 +32,7 @@ A RESTful API for managing blog posts with user authentication. Built using **No
    ```bash
    git clone https://github.com/Mahin-Rajput/Blog_API_withauth.git
    cd Blog_API_withauth
-Install dependencies:
+##Install dependencies:
 
 bash
 Copy
@@ -52,8 +52,9 @@ Copy
 npm start
 The server will start at http://localhost:3000.
 
-API Endpoints
-Authentication
+##API Endpoints
+
+##Authentication
 POST http://localhost:3000/signup Register a new user.
 
 json
@@ -65,7 +66,8 @@ Copy
     "pw":"aaa", 
     "country":"USA"
 }
-POSThttp://localhost:3000/api/users/login Login an existing user.
+
+##POSThttp://localhost:3000/api/users/login Login an existing user.
 
 json
 Copy
@@ -73,7 +75,8 @@ Copy
     "email":"hawkin@gmail.com", 
     "pw":"aaa"
 }
-Blog Posts
+
+##Blog Posts
 GET http://localhost:3000/api/blog/allblogs Get all blog posts.
 
 Query Parameters:
@@ -84,9 +87,10 @@ limit: Number of posts per page (default: 10).
 
 search: Search query for title or content.
 
-GET /api/posts/:id: Get a single blog post by ID.
+##GET /api/posts/:id: Get a single blog post by ID.
 
-POST http://localhost:3000/api/blog/createblog Create a new blog post (requires authentication).
+
+##POST http://localhost:3000/api/blog/createblog Create a new blog post (requires authentication).
 
 json
 Copy
@@ -102,7 +106,7 @@ Copy
     "body": "Space exploration is entering a new era with ambitious missions to the Moon, Mars, and beyond. Advancements in rocket technology, AI-driven robotics, and private space ventures are accelerating progress toward interplanetary travel. This article explores the latest developments in space exploration, the challenges of deep-space missions, and the potential for human settlement on other planets."
 }
 
-PUT http://localhost:3000/api/blog/singleblog Update a blog post by ID (requires authentication).
+##PUT http://localhost:3000/api/blog/singleblog Update a blog post by ID (requires authentication).
 
 json
 Copy
@@ -125,10 +129,10 @@ COPY
     "body": "Iamupdating thisnowaa."
 }
 
-Contributing
+##Contributing
 Contributions are welcome! Follow these steps:
 
-Fork the repository.
+##Fork the repository.
 
 Create a new branch: git checkout -b feature/YourFeatureName.
 
@@ -136,12 +140,12 @@ Commit your changes: git commit -m 'Add some feature'.
 
 Push to the branch: git push origin feature/YourFeatureName.
 
-Open a pull request.
+##Open a pull request.
 
-License
+##License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Contact
+##Contact
 For questions or suggestions, feel free to reach out:
 
 Mahin Rajput
